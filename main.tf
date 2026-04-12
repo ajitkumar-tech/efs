@@ -134,6 +134,13 @@ resource "aws_instance" "instance" {
   }
 }
 
+resource "aws_efs_file_system" "efs" {
+  encrypted = true
+
+  tags = {
+    Name = "my-efs"
+  }
+}
 
 resource "aws_efs_mount_target" "efs_mt" {
   count           = length(var.subnet_ids)
