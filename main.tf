@@ -146,5 +146,5 @@ resource "aws_efs_mount_target" "efs_mt" {
   count           = length(var.subnet_ids)
   file_system_id  = aws_efs_file_system.efs.id
   subnet_id       = var.subnet_ids[count.index]
-  vpc_security_group_ids = [aws_security_group.efs_sg.id]
+  security_groups = [aws_security_group.efs-sg.id]
 }
