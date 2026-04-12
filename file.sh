@@ -9,7 +9,7 @@ else
                                                                             
 ID=$(cat /etc/os-release | grep -w ID | cut -d "=" -f2 |tr -d '"')
 
-fsid="fs-03f3d8317fd88aed1.efs.ap-south-1.amazonaws.com"
+fsid="fs-014d5fbfec46caaa5.efs.ap-south-1.amazonaws.com"
                                                
 function_ubuntu(){   
 sudo apt update -y && sudo apt install nfs-common -y
