@@ -54,7 +54,7 @@ resource "aws_route_table" "public_rt1" {
     Name = "PublicRouteTable1"
   }
 }
-resource "aws_route_table" "public_rt1" {
+resource "aws_route_table" "public_rt2" {
   vpc_id = aws_vpc.main.id
 
   route {
