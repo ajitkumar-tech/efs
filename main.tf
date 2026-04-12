@@ -123,7 +123,7 @@ resource "aws_instance" "example" {
 resource "aws_instance" "instance" {
   
   ami                = "ami-03793655b06c6e29a"
-  instance_type      = "t3.nano"
+  instance_type      = "t3.micro"
   key_name           = "efs"
   subnet_id          = aws_subnet.private_subnet.id
   vpc_security_group_ids = [aws_security_group.efs-sg.id]
