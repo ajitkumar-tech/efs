@@ -70,12 +70,12 @@ resource "aws_route_table" "public_rt2" {
 
 
 resource "aws_route_table_association" "subnet_1_assoc" {
-  subnet_id      = aws_subnet.public_subnet.id
+  subnet_id      = aws_subnet.public_subnet1a.id
   route_table_id = aws_route_table.public_rt1.id
 }
 
 resource "aws_route_table_association" "subnet_2_assoc" {
-  subnet_id      = aws_subnet.private_subnet.id
+  subnet_id      = aws_subnet.public_subnet1b.id
   route_table_id = aws_route_table.private_rt2.id
 }
 
@@ -118,7 +118,7 @@ resource "aws_instance" "example" {
   ami                = "ami-03793655b06c6e29a"
   instance_type      = "t3.micro"
   key_name           = "efs"
-  subnet_id          = aws_subnet.public_subnet.id
+  subnet_id          = aws_subnet.public_subnet1a.id
   vpc_security_group_ids = [aws_security_group.efs-sg.id]
   availability_zone  = "ap-south-1a"
 
@@ -131,7 +131,7 @@ resource "aws_instance" "instance" {
   ami                = "ami-03793655b06c6e29a"
   instance_type      = "t3.micro"
   key_name           = "efs"
-  subnet_id          = aws_subnet.private_subnet.id
+  subnet_id          = aws_subnet.public_subnet1b.id
   vpc_security_group_ids = [aws_security_group.efs-sg.id]
   availability_zone  = "ap-south-1b"
 
