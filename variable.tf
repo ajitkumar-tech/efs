@@ -21,5 +21,5 @@ variable "egress-rules" {
 variable "subnet_ids" {
   description = "Default subnet IDs for EFS mount targets"
   type        = list(string)
-  default = [                 ]
+  default = ["subnet-0844265ec93053b2d", "subnet-0383af57f3f523954"]
 }
