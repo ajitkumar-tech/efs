@@ -109,9 +109,9 @@ resource "aws_security_group" "efs-sg" {
 }	
 resource "aws_instance" "example" {
   
-  ami                = "ami-0e35ddab05955cf57"
-  instance_type      = "t2.micro"
-  key_name           = "splunk"
+  ami                = "ami-03793655b06c6e29a"
+  instance_type      = "t3.micro"
+  key_name           = "efs"
   subnet_id          = aws_subnet.public_subnet.id
   vpc_security_group_ids = [aws_security_group.efs-sg.id]
   availability_zone  = "ap-south-1a"
@@ -122,9 +122,9 @@ resource "aws_instance" "example" {
 }
 resource "aws_instance" "instance" {
   
-  ami                = "ami-0af9569868786b23a"
-  instance_type      = "t2.nano"
-  key_name           = "splunk"
+  ami                = "ami-03793655b06c6e29a"
+  instance_type      = "t3.nano"
+  key_name           = "efs"
   subnet_id          = aws_subnet.private_subnet.id
   vpc_security_group_ids = [aws_security_group.efs-sg.id]
   availability_zone  = "ap-south-1b"
