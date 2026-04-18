@@ -30,11 +30,7 @@ jobs:
       - name: init
         run: terraform init
  
-      - name: plan
-        run: terraform plan
       
-      - name: terraform
-        run: terraform apply -auto-approve
 
       - name: ssh    
         run: |    
